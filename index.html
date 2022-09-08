@@ -11,7 +11,8 @@
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
 	<!--===============================================================================================-->
-
+ <meta name="viewport" content=
+        "width=device-width, initial-scale=1.0">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -40,35 +41,29 @@
 	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<link rel="stylesheet" type="text/css" href="main.css" />
 	 <script type="text/javascript">
+	
     google.charts.load("current", {packages:["corechart"]});
     google.charts.setOnLoadCallback(drawChart);
-    function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["Element", "Density", { role: "style" } ],
-        ["Copper", 8.94, "#b87333"],
-        ["Silver", 10.49, "silver"],
-        ["Gold", 19.30, "gold"],
-        ["Platinum", 21.45, "color: #e5e4e2"]
-      ]);
+	function drawChart() {
+            // Define the chart to be drawn.
+            var data = google.visualization.arrayToDataTable([
+               ['Year', '$'],
+               ['mechanical',  4781639],
+               ['2013',  3781639],
+               ['2014',  1170],
+               ['2015',  1250],
+               ['2016',  50]
+            ]);
 
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,
-                       { calc: "stringify",
-                         sourceColumn: 1,
-                         type: "string",
-                         role: "annotation" },
-                       2]);
+            var options = {title: 'Population (in millions)',
+			width:300}; 
 
-      var options = {
-        title: "Density of Precious Metals, in g/cm^3",
-        width: 600,
-        height: 400,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
-      };
-      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-      chart.draw(view, options);
-  }
+            // Instantiate and draw the chart.
+            var chart = new google.visualization.BarChart(document.getElementById('barchart_values'));
+            chart.draw(data, options);
+         }
+  
+    
   </script>
 	  <script type="text/javascript">
 
@@ -98,12 +93,19 @@
         // Set chart options
         var options = {'title':'How Much Pizza I Ate Last Night',
                        'width':400,
-                       'height':300};
+                       'height':300,
+					   'responsive': true};
 
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
       }
+	  	$(window).resize(function(){
+  google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+});
     </script>
 	<!--===============================================================================================-->
 </head>
@@ -250,8 +252,7 @@
 									placeholder="Your Comment..."></textarea>
 								<span class="focus-input100"></span>
 							</div>
-
-
+   
 							<input type="submit" name="Approve" value="Approve" id="Approve"
 								class="contact100-form-btn" />
 							<input type="submit" name="Reject" value="Reject" id="Reject" class="contact100-form-btn"
@@ -261,9 +262,9 @@
 				
 
 	<div class="tab-pane fade" id="statistic" role="tabpanel" aria-labelledby="nav-profile-tab">
-		<h1>Spend By Category </h1>
+
 						 <div id="chart_div"></div>
-						 <h2>Spent by Amount</h2>
+						
 						 <div id="barchart_values" style="width: 900px; height: 300px;"></div>
 					</div>
 				</div>
@@ -302,6 +303,7 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 	<script>
+		
 		window.dataLayer = window.dataLayer || [];
 
 		function gtag() {
