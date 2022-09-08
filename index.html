@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<title>
+		Invoice Approval
+	</title>
+
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+		integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+		id="bootstrap-css">
+
+	<link rel="stylesheet" href="bootstrap-steps.min.css">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css" />
+	 <script type="text/javascript">
+    google.charts.load("current", {packages:["corechart"]});
+    google.charts.setOnLoadCallback(drawChart);
+    function drawChart() {
+      var data = google.visualization.arrayToDataTable([
+        ["Element", "Density", { role: "style" } ],
+        ["Copper", 8.94, "#b87333"],
+        ["Silver", 10.49, "silver"],
+        ["Gold", 19.30, "gold"],
+        ["Platinum", 21.45, "color: #e5e4e2"]
+      ]);
+
+      var view = new google.visualization.DataView(data);
+      view.setColumns([0, 1,
+                       { calc: "stringify",
+                         sourceColumn: 1,
+                         type: "string",
+                         role: "annotation" },
+                       2]);
+
+      var options = {
+        title: "Density of Precious Metals, in g/cm^3",
+        width: 600,
+        height: 400,
+        bar: {groupWidth: "95%"},
+        legend: { position: "none" },
+      };
+      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+      chart.draw(view, options);
+  }
+  </script>
+	  <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'Topping');
+        data.addColumn('number', 'Slices');
+        data.addRows([
+          ['Mushrooms', 3],
+          ['Onions', 1],
+          ['Olives', 1],
+          ['Zucchini', 1],
+          ['Pepperoni', 2]
+        ]);
+
+        // Set chart options
+        var options = {'title':'How Much Pizza I Ate Last Night',
+                       'width':400,
+                       'height':300};
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+	<!--===============================================================================================-->
+</head>
+
+<body style="background-color:darkgray">
+
+	<div class="container-contact100">
+		<!--<div class="contact100-map" id="google_map" data-map-x="40.722047" data-map-y="-73.986422" data-pin="images/icons/map-marker.png" data-scrollwhell="0" data-draggable="1"></div>   -->
+
+		<div class="wrap-contact100">
+
+			<div class="contact100-form-title" style="background-color:#0047aa">
+
+				<img id="logo" src="images/SS-White-Vertical-Transparent_v1.0_2019.png"
+					style="width:100px;align-content:flex-start;" />
+
+
+
+
+
+				<span class="contact100-form-title-1">
+					Approval Request
+				</span>
+
+
+
+			</div>
+
+
+
+			<div class="container-fluid" style="padding:0px;">
+
+				<nav>
+					<div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+						<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home"
+							role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+					
+<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#statistic"
+							role="tab" aria-controls="nav-profile" aria-selected="false">statistic</a>
+					</div>
+				</nav>
+				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+					<div class="tab-pane fade  active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+						<form method="post"
+							action="./wrkapproval.aspx?userid=jleleux&amp;pwd=jleleux&amp;wrkflw=18024&amp;level=3257"
+							id="form1" class="contact100-form ">
+							<div class="aspNetHidden">
+								<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+									value="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" />
+							</div>
+
+							<div class="aspNetHidden">
+
+								<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR"
+									value="E52F3F44" />
+								<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION"
+									value="4gykP95eK+MdCEtogf2K/OqWxXiOnUpvgbwLfVXJiuHcZ0WKu1TFSAcFi1s1hgTPdDwUWxW0kfOEz99CqvD+RQeD+REFIjcRzxHm7ITLFTqGpWtq2ozpyA1i/hCJxb+i25y4ZGIiQbKimtHSzMHvMRdSxW0dOXPj5HqzJZ1Vpxg=" />
+							</div>
+
+							<ul class="steps">
+
+
+								<li class="step step-active step-success">
+									<div class="step-content">
+										<span class="step-circle">2</span>
+										<span class="step-text">hraza</span>
+									</div>
+								</li>
+								<li class="step step-active">
+									<div class="step-content">
+										<span class="step-circle">2</span>
+										<span class="step-text">hraza</span>
+									</div>
+								</li>
+								<li class="step step-active">
+									<div class="step-content">
+										<span class="step-circle">2</span>
+										<span class="step-text">hraza</span>
+									</div>
+								</li>
+								<li class="step step-active">
+									<div class="step-content">
+										<span class="step-circle">2</span>
+										<span class="step-text">hraza</span>
+									</div>
+								</li>
+								<li class="step">
+									<div class="step-content">
+										<span class="step-circle">3</span>
+										<span class="step-text">jleleux</span>
+									</div>
+								</li>
+								<li class="step">
+									<div class="step-content">
+										<span class="step-circle">4</span>
+										<span class="step-text">SS</span>
+									</div>
+								</li>
+							</ul>
+
+							<span id="Label1"></span>
+							<!-- <div id="statustxt" class="wrap-input100" style="font-size:smaller;align-content:center;"><table align='left'><tr><td><font color='green'><B>arahman>></B></font><br/> </td><td>&nbsp;</td><td><font color='green'><B>hraza>></B></font><br/> </td><td>&nbsp;</td><td>  <font color='orange'><B>jleleux>></B></font><br/></td><td>&nbsp;</td><td> <font color='red'><B>SS</B></font><br/></td><td>&nbsp;</td></tr></table></div> -->
+
+							<div id="emailbody"><B>Please approve the following:</B> <br /><B>Document Name:</B>
+								Purchase order:
+								PO-0023997, SEQUENCE TEL PTY LTD <br /><B>Project:</B> PNGB00001-Kit Program -PN
+								Gun Boat #1
+								<br /><B>Terms of Payment:</B> Special <br /><B>Total: </B>$155,556.00
+								<br /><B>Submitted by:</B>
+								WAJID ALI <br /> </br>
+
+
+								<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width: 50%" aria-valuenow="15"
+										aria-valuemin="0" aria-valuemax="100">1000</div>
+
+								</div>
+
+							</div>
+</br><br /> Attachments:&nbsp; <br /> <a href='http://eportal.swiftships.com:8094/'
+							target='_blank'></a><br /><a
+							href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A (GANSU LIXIN ENERGY_SS-157398.pdf'
+							target='_blank'>03_PQ_BOM_PNGB0001-501-A (GANSU LIXIN
+							ENERGY_SS-157398.pdf</a><br /><a
+							href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A (JINGO NEW MARINE)_SS-157399.pdf'
+							target='_blank'>03_PQ_BOM_PNGB0001-501-A (JINGO NEW
+							MARINE)_SS-157399.pdf</a><br /><a
+							href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A SEQUENCE TEL_SS-157400.pdf'
+							target='_blank'>03_PQ_BOM_PNGB0001-501-A SEQUENCE TEL_SS-157400.pdf</a><br /><a
+							href='http://eportal.swiftships.com:8094/04_BBS_P0-0023997 AUXILIARY SYSTEM GENERAL_SS-157401.pdf'
+							target='_blank'>04_BBS_P0-0023997 AUXILIARY SYSTEM GENERAL_SS-157401.pdf</a><br /><a
+							href='http://eportal.swiftships.com:8094/06_Draft PO_0023997 AUXILIARY SYSTEM GENERAL_SS-157402.pdf'
+							target='_blank'>06_Draft PO_0023997 AUXILIARY SYSTEM
+							GENERAL_SS-157402.pdf</a><br /><a
+							href='http://eportal.swiftships.com:8094/12_ Checklist_PO_0023997 AUXILIARY SYSTEM GENERAL_SS-157403.pdf'
+							target='_blank'>12_ Checklist_PO_0023997 AUXILIARY SYSTEM
+							GENERAL_SS-157403.pdf</a><br /><a
+							href='http://eportal.swiftships.com:8094/01_BOM_PNGB0001-501-A AUXILIARY SYSTEM - GENERAL_SS-157404.pdf'
+							target='_blank'>01_BOM_PNGB0001-501-A AUXILIARY SYSTEM -
+							GENERAL_SS-157404.pdf</a><br />
+							<div class="wrap-input100">
+								<span class="label-input100">Comments:</span>
+								<textarea name="message" id="message" class="input100"
+									placeholder="Your Comment..."></textarea>
+								<span class="focus-input100"></span>
+							</div>
+
+
+							<input type="submit" name="Approve" value="Approve" id="Approve"
+								class="contact100-form-btn" />
+							<input type="submit" name="Reject" value="Reject" id="Reject" class="contact100-form-btn"
+								style="background-color:Red;" />
+						</form>
+					</div>
+				
+
+	<div class="tab-pane fade" id="statistic" role="tabpanel" aria-labelledby="nav-profile-tab">
+		<h1>Spend By Category </h1>
+						 <div id="chart_div"></div>
+						 <h2>Spent by Amount</h2>
+						 <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+	<div id="dropDownSelect1"></div>
+	<script src="hhttps://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+	<!--===============================================================================================-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"></script>
+	<script src="js/map-custom.js"></script>
+	<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-23581568-13');
+	</script>
+
+
+</body>
+
+</html>
