@@ -368,6 +368,13 @@ textarea.input100 {
   flex-wrap: wrap;
   padding-top: 8px;
 }
+.activelink {
+    border: none;
+    background: #537db9 !important;
+    color: #fff !important;
+    border-radius: 0 !important;
+    transition: background 0.20s linear !important;
+}
 
 .contact100-form-btn {
   display: -webkit-box;
@@ -378,7 +385,7 @@ textarea.input100 {
   justify-content: center;
   align-items: center;
   padding: 0 20px;
-  min-width: 160px;
+  min-width: 138px;
   height: 50px;
   background-color: #57b846;
   border-radius: 25px;
@@ -567,8 +574,13 @@ nav > div a.nav-item.nav-link.active
   border: none;
     padding: 0px 25px;
     color:#fff;
-    background:#272e38;
+    background:#265078;
     border-radius:0;
+    
+}
+.nav > div a.nav-item.nav-link,
+nav > div a.nav-item.nav-link.active1{
+  background: #0047aa;
 }
 
 nav > div a.nav-item.nav-link.active:after
@@ -593,7 +605,7 @@ nav > div a.nav-item.nav-link:hover,
 nav > div a.nav-item.nav-link:focus
 {
   border: none;
-    background: #0047aa;
+    background: #537db9;
     color:#fff;
     border-radius:0;
     transition:background 0.20s linear;
