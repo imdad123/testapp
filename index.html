@@ -11,8 +11,7 @@
 	<!--===============================================================================================-->
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico" />
 	<!--===============================================================================================-->
- <meta name="viewport" content=
-        "width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
@@ -31,82 +30,89 @@
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css" />
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css" />
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"
 		id="bootstrap-css">
 
 	<link rel="stylesheet" href="bootstrap-steps.min.css">
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-	 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 	<link rel="stylesheet" type="text/css" href="main.css" />
-	 <script type="text/javascript">
-	
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
-	function drawChart() {
-            // Define the chart to be drawn.
-            var data = google.visualization.arrayToDataTable([
-               ['Year', '$'],
-               ['mechanical',  4781639],
-               ['2013',  3781639],
-               ['2014',  1170],
-               ['2015',  1250],
-               ['2016',  50]
-            ]);
+	<script type="text/javascript">
+		google.charts.load("current", {
+			packages: ["corechart"]
+		});
+		google.charts.setOnLoadCallback(drawChart);
 
-            var options = {title: 'Population (in millions)',
-			width:300}; 
+		function drawChart() {
+			// Define the chart to be drawn.
+			var data = google.visualization.arrayToDataTable([
+				['Year', '$'],
+				['mechanical', 4781639],
+				['2013', 3781639],
+				['2014', 1170],
+				['2015', 1250],
+				['2016', 50]
+			]);
 
-            // Instantiate and draw the chart.
-            var chart = new google.visualization.BarChart(document.getElementById('barchart_values'));
-            chart.draw(data, options);
-         }
-  
-    
-  </script>
-	  <script type="text/javascript">
+			var options = {
+				title: 'Population (in millions)',
+				width: 300
+			};
 
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
+			// Instantiate and draw the chart.
+			var chart = new google.visualization.BarChart(document.getElementById('barchart_values'));
+			chart.draw(data, options);
+		}
+	</script>
+	<script type="text/javascript">
+		// Load the Visualization API and the corechart package.
+		google.charts.load('current', {
+			'packages': ['corechart']
+		});
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
+		// Set a callback to run when the Google Visualization API is loaded.
+		google.charts.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+		// Callback that creates and populates a data table,
+		// instantiates the pie chart, passes in the data and
+		// draws it.
+		function drawChart() {
 
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
+			// Create the data table.
+			var data = new google.visualization.DataTable();
+			data.addColumn('string', 'Topping');
+			data.addColumn('number', 'Slices');
+			data.addRows([
+				['Mushrooms', 3],
+				['Onions', 1],
+				['Olives', 1],
+				['Zucchini', 1],
+				['Pepperoni', 2]
+			]);
 
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':450,
-                       'height':300,
-					   'responsive': true};
+			// Set chart options
+			var options = {
+				'title': 'How Much Pizza I Ate Last Night',
+				'width': 450,
+				'height': 300,
+				'responsive': true
+			};
 
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-	  	$(window).resize(function(){
-  google.charts.load('current', {'packages':['corechart']});
+			// Instantiate and draw our chart, passing in some options.
+			var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+			chart.draw(data, options);
+		}
+		$(window).resize(function () {
+			google.charts.load('current', {
+				'packages': ['corechart']
+			});
 
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-});
-    </script>
+			// Set a callback to run when the Google Visualization API is loaded.
+			google.charts.setOnLoadCallback(drawChart);
+		});
+	</script>
 	<!--===============================================================================================-->
 </head>
 
@@ -140,18 +146,17 @@
 
 				<nav>
 					<div class="nav nav-tabs nav-fill " id="nav-tab" role="tablist">
-						<a class="nav-item nav-link show active activelink" id="nav-home-tab" data-toggle="tab" href="#nav-home"
-							role="tab" aria-controls="nav-home" 
-							    
-							
-							aria-selected="true" onclick="myFunction()">Home</a>
-					
-<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#statistic"
-							role="tab" aria-controls="nav-profile" onclick="myFunction()" aria-selected="false">statistic</a>
+						<a class="nav-item nav-link show active activelink" id="nav-home-tab" data-toggle="tab"
+							href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true"
+							onclick="myFunction()">Home</a>
+
+						<a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#statistic" role="tab"
+							aria-controls="nav-profile" onclick="myFunction()" aria-selected="false">statistic</a>
 					</div>
 				</nav>
 				<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-					<div class="tab-pane fade  active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+					<div class="tab-pane fade  active show" id="nav-home" role="tabpanel"
+						aria-labelledby="nav-home-tab">
 						<form method="post"
 							action="./wrkapproval.aspx?userid=jleleux&amp;pwd=jleleux&amp;wrkflw=18024&amp;level=3257"
 							id="form1" class="contact100-form ">
@@ -172,42 +177,45 @@
 
 
 								<li class="step step-active step-success">
-									<div class="step-content">
+									<div class="step-content-custom">
+										<span class="step-circle">1</span>
+										<span class="step-text">hraza</span>
+									</div>
+								</li>
+								<li class="step step-active">
+									<div class="step-content-custom">
 										<span class="step-circle">2</span>
 										<span class="step-text">hraza</span>
 									</div>
 								</li>
 								<li class="step step-active">
-									<div class="step-content">
-										<span class="step-circle">2</span>
+									<div class="step-content-custom">
+										<span class="step-circle">3</span>
 										<span class="step-text">hraza</span>
 									</div>
 								</li>
 								<li class="step step-active">
-									<div class="step-content">
-										<span class="step-circle">2</span>
-										<span class="step-text">hraza</span>
-									</div>
-								</li>
-								<li class="step step-active">
-									<div class="step-content">
-										<span class="step-circle">2</span>
+									<div class="step-content-custom">
+										<span class="step-circle">4</span>
 										<span class="step-text">hraza</span>
 									</div>
 								</li>
 								<li class="step">
-									<div class="step-content">
-										<span class="step-circle">3</span>
+									<div class="step-content-custom">
+										<span class="step-circle">5</span>
 										<span class="step-text">jleleux</span>
 									</div>
 								</li>
 								<li class="step">
-									<div class="step-content">
-										<span class="step-circle">4</span>
+									<div class="step-content-custom">
+										<span class="step-circle">6</span>
 										<span class="step-text">SS</span>
 									</div>
 								</li>
 							</ul>
+
+
+
 
 							<span id="Label1"></span>
 							<!-- <div id="statustxt" class="wrap-input100" style="font-size:smaller;align-content:center;"><table align='left'><tr><td><font color='green'><B>arahman>></B></font><br/> </td><td>&nbsp;</td><td><font color='green'><B>hraza>></B></font><br/> </td><td>&nbsp;</td><td>  <font color='orange'><B>jleleux>></B></font><br/></td><td>&nbsp;</td><td> <font color='red'><B>SS</B></font><br/></td><td>&nbsp;</td></tr></table></div> -->
@@ -228,47 +236,47 @@
 								</div>
 
 							</div>
-</br><br /> Attachments:&nbsp; <br /> <a href='http://eportal.swiftships.com:8094/'
-							target='_blank'></a><br /><a
-							href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A (GANSU LIXIN ENERGY_SS-157398.pdf'
-							target='_blank'>03_PQ_BOM_PNGB0001-501-A (GANSU LIXIN
-							ENERGY_SS-157398.pdf</a><br /><a
-							href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A (JINGO NEW MARINE)_SS-157399.pdf'
-							target='_blank'>03_PQ_BOM_PNGB0001-501-A (JINGO NEW
-							MARINE)_SS-157399.pdf</a><br /><a
-							href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A SEQUENCE TEL_SS-157400.pdf'
-							target='_blank'>03_PQ_BOM_PNGB0001-501-A SEQUENCE TEL_SS-157400.pdf</a><br /><a
-							href='http://eportal.swiftships.com:8094/04_BBS_P0-0023997 AUXILIARY SYSTEM GENERAL_SS-157401.pdf'
-							target='_blank'>04_BBS_P0-0023997 AUXILIARY SYSTEM GENERAL_SS-157401.pdf</a><br /><a
-							href='http://eportal.swiftships.com:8094/06_Draft PO_0023997 AUXILIARY SYSTEM GENERAL_SS-157402.pdf'
-							target='_blank'>06_Draft PO_0023997 AUXILIARY SYSTEM
-							GENERAL_SS-157402.pdf</a><br /><a
-							href='http://eportal.swiftships.com:8094/12_ Checklist_PO_0023997 AUXILIARY SYSTEM GENERAL_SS-157403.pdf'
-							target='_blank'>12_ Checklist_PO_0023997 AUXILIARY SYSTEM
-							GENERAL_SS-157403.pdf</a><br /><a
-							href='http://eportal.swiftships.com:8094/01_BOM_PNGB0001-501-A AUXILIARY SYSTEM - GENERAL_SS-157404.pdf'
-							target='_blank'>01_BOM_PNGB0001-501-A AUXILIARY SYSTEM -
-							GENERAL_SS-157404.pdf</a><br />
+							</br><br /> Attachments:&nbsp; <br /> <a href='http://eportal.swiftships.com:8094/'
+								target='_blank'></a><br /><a
+								href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A (GANSU LIXIN ENERGY_SS-157398.pdf'
+								target='_blank'>03_PQ_BOM_PNGB0001-501-A (GANSU LIXIN
+								ENERGY_SS-157398.pdf</a><br /><a
+								href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A (JINGO NEW MARINE)_SS-157399.pdf'
+								target='_blank'>03_PQ_BOM_PNGB0001-501-A (JINGO NEW
+								MARINE)_SS-157399.pdf</a><br /><a
+								href='http://eportal.swiftships.com:8094/03_PQ_BOM_PNGB0001-501-A SEQUENCE TEL_SS-157400.pdf'
+								target='_blank'>03_PQ_BOM_PNGB0001-501-A SEQUENCE TEL_SS-157400.pdf</a><br /><a
+								href='http://eportal.swiftships.com:8094/04_BBS_P0-0023997 AUXILIARY SYSTEM GENERAL_SS-157401.pdf'
+								target='_blank'>04_BBS_P0-0023997 AUXILIARY SYSTEM GENERAL_SS-157401.pdf</a><br /><a
+								href='http://eportal.swiftships.com:8094/06_Draft PO_0023997 AUXILIARY SYSTEM GENERAL_SS-157402.pdf'
+								target='_blank'>06_Draft PO_0023997 AUXILIARY SYSTEM
+								GENERAL_SS-157402.pdf</a><br /><a
+								href='http://eportal.swiftships.com:8094/12_ Checklist_PO_0023997 AUXILIARY SYSTEM GENERAL_SS-157403.pdf'
+								target='_blank'>12_ Checklist_PO_0023997 AUXILIARY SYSTEM
+								GENERAL_SS-157403.pdf</a><br /><a
+								href='http://eportal.swiftships.com:8094/01_BOM_PNGB0001-501-A AUXILIARY SYSTEM - GENERAL_SS-157404.pdf'
+								target='_blank'>01_BOM_PNGB0001-501-A AUXILIARY SYSTEM -
+								GENERAL_SS-157404.pdf</a><br />
 							<div class="wrap-input100">
 								<span class="label-input100">Comments:</span>
 								<textarea name="message" id="message" class="input100"
 									placeholder="Your Comment..."></textarea>
 								<span class="focus-input100"></span>
 							</div>
-   
+
 							<input type="submit" name="Approve" value="Approve" id="Approve"
 								class="contact100-form-btn" />
 							<input type="submit" name="Reject" value="Reject" id="Reject" class="contact100-form-btn"
 								style="background-color:Red;" />
 						</form>
 					</div>
-				
 
-	<div class="tab-pane fade" id="statistic" role="tabpanel" aria-labelledby="nav-profile-tab">
 
-						 <div id="chart_div"></div>
-						
-						 <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+					<div class="tab-pane fade" id="statistic" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+						<div id="chart_div"></div>
+
+						<div id="barchart_values" style="width: 900px; height: 300px;"></div>
 					</div>
 				</div>
 			</div>
@@ -309,10 +317,10 @@
 		var error = document.getElementsByClassName("activelink");
 
 
-function myFunction() {
-  var element = document.getElementById("nav-home-tab");
-  element.classList.remove("activelink");
-}
+		function myFunction() {
+			var element = document.getElementById("nav-home-tab");
+			element.classList.remove("activelink");
+		}
 		window.dataLayer = window.dataLayer || [];
 
 		function gtag() {
